@@ -1,0 +1,512 @@
+/* Variables de couleurs */
+:root {
+    --primary-color: #66cccc;
+    --secondary-color: #ffffff;
+    --background-color: #ffffff;
+    --text-color: #333;
+    --white: #fff;
+}
+
+/* Styles de base */
+body {
+    font-family: 'Sora', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+
+/* ... Les Header styles ... */
+
+header {
+    background: #000; /* Fond noir */
+    color: var(--white);
+    padding: 10px auto; /* Ajout de padding pour l'espace intérieur */
+    border-bottom: var(--primary-color) 3px solid;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%; /* Le container prend toute la largeur */
+    padding: 0 55px; /* Ajout de padding pour l'espace extérieur */
+}
+
+header .logo a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 0; /* Suppression de la marge à gauche du logo s'il y en avait*/
+}
+
+header .logo span {
+    color: var(--primary-color);
+}
+
+header .logo a:hover {
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--primary-color);
+}
+
+
+/* Media Queries pour le responsive header*/
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column; 
+        align-items: flex-start; /* Alignement du logo et la navigation à gauche */
+    }
+
+    nav ul {
+        flex-direction: column; /* les liens de navigation sur les petits écrans */
+        margin-top: 10px; /* Ajout d'une marge en haut de la navigation */
+    }
+
+    nav ul li {
+        margin-left: 0; /* Suppression de la marge à gauche des liens de navigation */
+        margin-bottom: 10px; /* Ajout de marge en bas des liens de navigation */
+    }
+}
+
+
+
+/* ... La section index styles ... */
+
+.hero {
+    background-color: var(--background-color);
+    padding: 80px 0;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%; /* Alignement avec la marge du header */
+    margin: 0 auto; /* Centrage du contenu */
+}
+
+.hero-text {
+    flex: 1; 
+}
+
+.hero-text p {
+    font-size: 2em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: left; 
+}
+
+.primary-text {
+    color: var(--primary-color);
+}
+
+.cta-btn {
+    display: block;
+    background-color: var(--primary-color);
+    color: #000;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    width: fit-content; /* Adaptation exact au contenu */
+    white-space: nowrap; 
+    display: block; /* Bouton qui doit occuper toute la largeur */
+    margin-left: 0 !important; /* Priorité maximale pour annuler les autres styles */
+    text-align: left !important;
+}
+
+.cta-btn:hover {
+    background-color: #000;
+    color: var(--white);
+}
+
+.hero-image {
+    flex: 1; /* Prise de la moitié de l'espace disponible */
+    text-align: right; /* Alignement de l'image à droite */
+}
+
+.hero-image img {
+    max-width: 80%; /* Réduction de la taille de l'image à 80% de son conteneur */
+    height: auto;
+}
+
+/* Responsive section idex */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        width: 95%; /* Ajustement de la largeur sur les petits écrans */
+    }
+
+    .hero-image {
+        order: -1; /* L'ordre de l'image en premier dans l'ordre de la colonne */
+        margin-top: auto;
+        text-align: center; /* Centrqge de l'image sur les petits écrans */
+    }
+    .hero-image img {
+        max-width: 100%; /* L'image prend toute la largeur sur les petits écrans */
+    }
+
+    .hero-text .cta-btn {
+        display: inline-block; /* Retour du bouton en inline-block */
+        margin: 20px auto 0 auto; /* Centrage horizontale du bouton */
+        text-align: center; /* Centrage du texte interne du bouton */
+    }
+}
+
+
+
+/* ... a_propos styles ... */
+
+.about {
+    background-color: var(--background-color);
+    padding: 30px 0;
+}
+
+.about-title {
+    text-align: center; 
+    margin-bottom: auto;
+    color: #66cccc;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Empilement des éléments si nécessaire */
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    flex: 1;
+    text-align: right;
+}
+
+.about-image img.avatar {
+    width: 300px; /* Ajustement de la taille de l'image */
+    height: 300px;
+    border-radius: 50%; /* Rend l'image ronde */
+    border: 5px solid var(--primary-color); /* Ajout d'une bordure colorée */
+}
+
+/* Responsive style a_propos */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Passage en colonne */
+        align-items: center; /* Centrage des éléments */
+        text-align: center; /* Centrage du texte */
+    }
+
+    .about-image {
+        order: -1; 
+        width: 100%; 
+        margin-bottom: 15px; 
+        display: flex; /* Activativation du flexbox */
+        justify-content: center; /* Centrage horizontale de l'image */
+    }
+
+    .about-image img.avatar {
+        width: 250px;
+        height: 250px; 
+        max-width: 300px; 
+    }
+
+    .about-text {
+        margin-top: 0;
+    }
+
+    .about-text .cta-btn {
+        display: inline-block; /* Retourne le bouton en inline-block */
+        margin: 20px auto 0 auto; /* Centre horizontalement le bouton */
+        text-align: center;
+    }
+}
+
+
+
+/* ... projets styles ... */
+
+.projets {
+    background-color: var(--background-color);
+    padding: 80px 0;
+}
+
+.projets-title {
+    text-align: center; /* Centrage du titre horizontalement */
+    margin-bottom: 40px; /* Ajout d'une marge en dessous du titre */
+    color: var(--primary-color); /* Couleur du titre */
+}
+
+.projets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 80%; /* Ajustement la largeur de la grille */
+    margin: 0 auto;
+}
+
+.projet {
+    background-color: var(--white);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Centrage du contenu horizontalement */
+}
+
+.projet:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.projet h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.projet p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.projet .cta-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 0px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.projet .cta-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--black);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .projets-grid {
+        width: 95%; /* Ajustement de la largeur de la grille sur les petits écrans */
+    }
+}
+
+
+
+/* ... compétences styles ... */
+
+.competences {
+    background-color: var(--background-color);
+    padding: 80px 0;
+}
+
+.competences-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.competences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.competences-soft, .competences-hard {
+    background-color: var(--white);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.competence {
+    margin-bottom: 20px;
+}
+
+.competence span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    background-color: #eee;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.progress {
+    background-color: var(--primary-color);
+    height: 10px;
+    border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .competences-grid {
+        width: 95%;
+    }
+}
+
+
+
+
+/* ... Contact styles ... */
+
+.contact {
+    background-color: #000;
+    padding: 80px 0;
+    color: #fff;
+}
+
+.contact-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.contact-form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex; /* Utilisation de flexbox pour aligner les champs côte à côte */
+    justify-content: space-between; /* Espacement égal entre les champs */
+    gap: 50px; /* Ajout d'un espacement entre les champs */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    flex: 1; /* Permetttre aux champs de prendre la même largeur */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 0px;
+    background-color: #fff; 
+    color: #333;
+}
+
+.form-group input::placeholder, .form-group textarea::placeholder {
+    color: #ccc; /* Texte en gris clair pour les indications */
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+.cta-btn {
+    font-family: 'Sora', Arial, Helvetica, sans-serif;
+    background-color: #66cccc;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    display: block; /* Affichage du bouton en tant qu'élément de bloc */
+    margin: 0 auto; /* Et centrage du bouton horizontalement */
+}
+
+.cta-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 80%;
+    }
+
+    .form-row {
+        flex-direction: column; /* Alignement des champs verticalement sur les petits écrans */
+        gap: 10px; /* Réduiction de l'espacement entre les champs en mode responsive */
+
+    }
+}
+
+
+
+footer {
+    background: var(--background-color); /* Utilisation de la couleur de fond de la page */
+    color: var(--text-color); /* Utilisation de la couleur de texte de la page */
+    padding: 20px 0; /* Augmentation du padding pour plus d'espacement */
+    font-size: 14px; /* Taille de police uniforme */
+}
+
+.footer-section {
+    display: flex; /* Utilisation de flexbox pour aligner les éléments horizontalement */
+    justify-content: space-between; /* Espacement égal entre les éléments */
+    align-items: center; /* Alignement vertical au centre */
+    width: 80%; /* Largeur du contenu */
+    margin: 0 auto; /* Centrage horizontal */
+}
+
+.footer-container p {
+    margin: 0; /* Suppression des marges par défaut */
+}
+
+footer span {
+    color: var(--primary-color); /* Couleur du nom */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-section {
+        flex-direction: column; /* Alignement vertical sur les petits écrans */
+        text-align: center; /* Centrage du texte sur les petits écrans */
+    }
+
+    .footer-container {
+        margin-bottom: 10px; /* Ajout d'une marge en dessous des éléments sur les petits écrans */
+    }
+}
